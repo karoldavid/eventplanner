@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<!--  Display Events that have been created -->
+
+<dom-module id="my-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      ul {
+        list-style-type: none;
+      }
+    </style>
+    <ul>
+      <template is="dom-repeat" items="{{items}}">
+        <li><span class="paper-font-body1">{{item}}</span></li>
+      </template>
+    </ul>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'my-list',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          }
+        },
+        ready: function() {
+          this.items = [
+            'Conference Talk Sheraton',
+            'Conference Talk Hilton',
+            'Conference Talk Radison',
+          ];
+        }
+      });
+    })();
+  </script>
+</dom-module>
