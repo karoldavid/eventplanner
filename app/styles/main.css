@@ -24,3 +24,9 @@ paper-card {
   padding: 1em;
   width: 100%;
 }
+
+paper-progress {
+  --paper-progress-transition-duration: 0.08s;
+  --paper-progress-transition-timing-function: ease;
+  --paper-progress-transition-transition-delay: 0s;
+}
