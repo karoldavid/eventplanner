@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
-  var submit = document.querySelector('.submit');
+  //var submit = document.querySelector('.submit');
 
   // Sets app default base URL
   app.baseUrl = '/';
@@ -34,24 +34,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
-    console.log('Our app is ready to rock!');
-
-
-    // Toggle create an account if check box checked
-    var createAccount = document.querySelector('.create-account');
-    var newAccount = document.querySelector('.new-account');
-
-    createAccount.addEventListener('change', function (e) {
-      newAccount.classList.toggle('fade-in');
-    });
-
-    // Toggle create new event if check box checked
-    var createEvent = document.querySelector('.create-event');
-    var newEvent = document.querySelector('.new-event');
-
-    createEvent.addEventListener('change', function (e) {
-      newEvent.classList.toggle('fade-in');
-    });
+    console.log('App ready');
+    startForm();
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
