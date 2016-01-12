@@ -1,6 +1,17 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="my-form">
+
+<style is="custom-style">
+  paper-fab.blue {
+    --paper-fab-background: var(--paper-light-blue-500);
+    --paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
+  }
+  paper-fab.orange {
+    --paper-fab-background: var(--paper-orange-500);
+    --paper-fab-keyboard-focus-background: var(--paper-orange-900);
+  }
+</style>
   <template>
     <div class="layout vertical">
       <form is="iron-form" id="form" method="post" action="/form/handler" label="Checkout">
@@ -9,29 +20,29 @@
 
         <!-- Account Creation -->
 
-
         <paper-card heading="Create an Account?" class="flex">
-          <paper-checkbox class="create-account">Create an Account</paper-checkbox>
+          <paper-fab icon="add" title="add" class="create-account blue"></paper-fab>
           <div class="new-account">
-            <label for="name">
-              <paper-input label="Name"></paper-input>
-            </label>
-            <label for="email">
-              <gold-email-input label="exampe@email.com"></gold-email-input>
-            </label>
-            <label for="password1">
-              <paper-input label="password"></paper-input>
-            </label>
-            <label for="password1">
-              <paper-input label="password confirmation"></paper-input>
-            </label>
+
+            <label for="name"></label>
+            <paper-input id="name" label="Name" type="text"></paper-input>
+
+            <label for="email"></label>
+            <gold-email-input id="email" type="email" label="exampe@email.com"></gold-email-input>
+
+			<label for="password"></label>
+            <paper-input label="Password" required value="{{pass::input}}" id="checkPassword"></paper-input>
+
+            <label for="password-confirmation"></label>
+            <paper-input label="Password confirmation" required value="{{repass::input}}" on-change="passmatch" id="checkPassword"></paper-input>
+
           </div>
         </paper-card>
 
         <!--  Create a New Event -->
 
         <paper-card heading="Create a New Event?" class="flex">
-          <paper-checkbox class="create-event">Create new Event?</paper-checkbox>
+          <paper-fab icon="add" title="add" class="create-event blue"></paper-fab>
             <div class="new-event">
               <label for="event-name">
                 <paper-input label="Event Name"></paper-input>
@@ -61,7 +72,6 @@
               </label>
             </div>
         </paper-card>
-
         <paper-button class="submit" raised onclick="submitForm()">Submit</paper-button>
       </form>
     </div>
