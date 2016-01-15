@@ -2,16 +2,6 @@
 
 <dom-module id="my-form">
 
-<style is="custom-style">
-  paper-fab.blue {
-    --paper-fab-background: var(--paper-light-blue-500);
-    --paper-fab-keyboard-focus-background: var(--paper-light-blue-900);
-  }
-  paper-fab.orange {
-    --paper-fab-background: var(--paper-orange-500);
-    --paper-fab-keyboard-focus-background: var(--paper-orange-900);
-  }
-</style>
   <template>
     <div class="layout vertical">
       <form is="iron-form" id="form" method="post" action="/form/handler" label="Checkout">
@@ -45,8 +35,9 @@
         <paper-card heading="Create a New Event?" class="flex">
           <paper-fab icon="add" title="add" class="create-event"></paper-fab>
             <div class="new-event">
+
               <label for="event-name">
-                <paper-input label="Event Name"></paper-input>
+                <paper-input label="Event Name" minlength="8" maxlength="50" auto-validate></paper-input>
               </label>
               <paper-dropdown-menu label="Event Type">
                   <paper-menu class="dropdown-content">
