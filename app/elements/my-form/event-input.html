@@ -38,13 +38,20 @@
             <paper-input label="Additional Information about the Event"></paper-input>
        </label> -->
 
+        <paper-button class="submit" on-tap="createEvent">create</paper-button>
+
     </template>
   <script>
     (function() {
       'use strict';
 
       Polymer({
-        is: 'event-input'
+        is: 'event-input',
+
+        createEvent: function() {
+            console.log('yupp');
+        }
+
       });
     })();
   </script>
