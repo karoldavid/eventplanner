@@ -1,0 +1,30 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="create-account">
+	<template>
+
+        <label for="name"></label>
+        <paper-input id="name" label="Name" type="text"></paper-input>
+
+        <label for="email"></label>
+        <iron-icon icon="communication:email"></iron-icon>
+        <gold-email-input id="email" type="email" label="exampe@email.com"></gold-email-input>
+
+        <label for="password"></label>
+        <paper-input label="Password" required value="{{pass::input}}" id="checkPassword"></paper-input>
+
+        <label for="password-confirmation"></label>
+        <paper-input label="Password confirmation" required value="{{repass::input}}" on-change="passmatch" id="checkPassword"></paper-input>
+
+    </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'create-account'
+      });
+    })();
+  </script>
+</dom-module>

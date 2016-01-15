@@ -1,0 +1,50 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="event-input">
+	<template>
+
+        <label for="event-name">
+            <paper-input id="event" label="Event Name" type="text" minlength="8" maxlength="50" auto-validate></paper-input>
+        </label>
+
+        <paper-dropdown-menu label="Event Type">
+            <paper-menu class="dropdown-content">
+        	    <paper-item>Conference Talk</paper-item>
+            	<paper-item>Get Together</paper-item>
+            	<paper-item>Meeting</paper-item>
+            </paper-menu>
+        </paper-dropdown-menu>
+
+        <label for="host">
+            <paper-input id="host" label="Event Host" type="text" minlength="8" maxlength="50" auto-validate></paper-input>
+        </label>
+
+        <h3>Pick a Date</h3>
+        <label for="date">
+            <jv-datepicker ><jv-datepicker>
+        </label>
+
+        <label for="location">
+            <paper-input label="Event Location"></paper-input>
+        </label>
+
+        <label for="guest-list">
+            <paper-input label="Guest List"></paper-input>
+        </label>
+
+        <label for="message">
+            <paper-input label="Additional Information about the Event"></paper-input>
+       </label>
+
+    </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'event-input'
+      });
+    })();
+  </script>
+</dom-module>
