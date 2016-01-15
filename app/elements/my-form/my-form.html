@@ -5,65 +5,33 @@
   <template>
     <div class="layout vertical">
       <form is="iron-form" id="form" method="post" action="/form/handler" label="Checkout">
-        <paper-card heading="My Event" class="flex">
-        </paper-card>
+
+        <paper-card heading="My Event" class="flex"></paper-card>
 
         <!-- Account Creation -->
 
-        <paper-card heading="Create an Account?" class="flex">
+    <!--    <paper-card heading="Create an Account?" class="flex">
           <paper-fab icon="add" title="add" class="create-account"></paper-fab>
           <div class="new-account">
 
-            <label for="name"></label>
-            <paper-input id="name" label="Name" type="text"></paper-input>
-
-            <label for="email"></label>
-			<iron-icon icon="communication:email"></iron-icon>
-            <gold-email-input id="email" type="email" label="exampe@email.com"></gold-email-input>
-
-			<label for="password"></label>
-            <paper-input label="Password" required value="{{pass::input}}" id="checkPassword"></paper-input>
-
-            <label for="password-confirmation"></label>
-            <paper-input label="Password confirmation" required value="{{repass::input}}" on-change="passmatch" id="checkPassword"></paper-input>
+			<create-account></create-account>
 
           </div>
-        </paper-card>
+        </paper-card> -->
 
         <!--  Create a New Event -->
 
         <paper-card heading="Create a New Event?" class="flex">
           <paper-fab icon="add" title="add" class="create-event"></paper-fab>
+
             <div class="new-event">
 
-              <label for="event-name">
-                <paper-input label="Event Name" minlength="8" maxlength="50" auto-validate></paper-input>
-              </label>
-              <paper-dropdown-menu label="Event Type">
-                  <paper-menu class="dropdown-content">
-                    <paper-item>Conference Talk</paper-item>
-                    <paper-item>Get Together</paper-item>
-                    <paper-item>Meeting</paper-item>
-                    </paper-menu>
-                  </paper-dropdown-menu>
-              <label for="host">
-                <paper-input label="Event Host" minlength="8" maxlength="50" auto-validate></paper-input>
-              </label>
-              <h3>Pick a Date</h3>
-              <label for="date">
-                <jv-datepicker ><jv-datepicker>
-              </label>
-              <label for="location">
-                <paper-input label="Event Location"></paper-input>
-              </label>
-              <label for="guest-list">
-                <paper-input label="Guest List"></paper-input>
-              </label>
-              <label for="message">
-                <paper-input label="Additional Information about the Event"></paper-input>
-              </label>
+            	<event-input></event-input>
+
             </div>
+
         </paper-card>
+
         <paper-button class="submit" raised onclick="submitForm()">Submit</paper-button>
       </form>
     </div>
